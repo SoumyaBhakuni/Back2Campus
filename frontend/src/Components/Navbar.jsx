@@ -5,13 +5,15 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is logged in (using localStorage or session)
     const user = localStorage.getItem("user");
     if (user) {
       setIsAuthenticated(true);
+      const parsedUser = JSON.parse(user);
+      setUserRole(parsedUser.role);
     }
   }, []);
 
@@ -20,9 +22,10 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("user"); // Clear stored user data
+    localStorage.removeItem("user");
     setIsAuthenticated(false);
-    navigate("/login"); // Redirect to login page
+    setUserRole(null);
+    navigate("/login");
   };
 
   return (
@@ -31,18 +34,20 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center py-2">
             <div className="rounded-md flex items-center justify-center overflow-hidden">
-              <img src="/public/Vizion logoNOBG.png" alt="Vizion Logo" className="h-16 w-16 object-contain" />
+              <img src="/public/logo.png" alt="Back2Campus Logo" className="h-16 w-16 object-contain" />
             </div>
-            <span className="ml-3 text-xl font-semibold text-white hidden sm:block">Vizion</span>
+            <span className="ml-3 text-xl font-semibold text-white hidden sm:block">Back2Campus</span>
           </Link>
 
           <ul className="text-gray-200 hidden md:flex space-x-8">
             <li className="hover:text-white hover:border-b-2 hover:border-blue-400 pb-1 transition-all">
               <Link to="/internship" className="font-medium">Internship</Link>
             </li>
-            <li className="hover:text-white hover:border-b-2 hover:border-blue-400 pb-1 transition-all">
-              <Link to="/alumini" className="font-medium">Alumni Connect</Link>
-            </li>
+            {userRole === "Student" && (
+              <li className="hover:text-white hover:border-b-2 hover:border-blue-400 pb-1 transition-all">
+                <Link to="/alumini" className="font-medium">Alumni Connect</Link>
+              </li>
+            )}
             <li className="hover:text-white hover:border-b-2 hover:border-blue-400 pb-1 transition-all">
               <Link to="/events" className="font-medium">Event Hub</Link>
             </li>
@@ -90,11 +95,13 @@ const Navbar = () => {
                   Job/Internship Opportunities
                 </Link>
               </li>
-              <li className="hover:bg-slate-600 transition-colors">
-                <Link to="/alumini" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 font-medium">
-                  Alumni Connect
-                </Link>
-              </li>
+              {userRole === "Student" && (
+                <li className="hover:bg-slate-600 transition-colors">
+                  <Link to="/alumini" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 font-medium">
+                    Alumni Connect
+                  </Link>
+                </li>
+              )}
               <li className="hover:bg-slate-600 transition-colors">
                 <Link to="/events" onClick={() => setIsMenuOpen(false)} className="block px-4 py-3 font-medium">
                   Event Hub

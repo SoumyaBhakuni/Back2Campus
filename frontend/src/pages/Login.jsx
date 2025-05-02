@@ -13,13 +13,16 @@ const Login = () => {
     setIsLoading(true);
     try {
       const response = await axios.post("http://localhost:5000/api/auth/login", { email, password });
-      
+
       if (response.data.success) {
+        const { _id, status } = response.data.user;
+
         // Store user data in localStorage
-        localStorage.setItem("user", JSON.stringify(response.data.status)); 
-        
+        localStorage.setItem("user", JSON.stringify({ _id, status }));
+
+        console.log("Login Response:", response.data); // Debug
         alert("Login Successful!");
-        navigate("/");  // Navigate to the homepage or a protected route
+        navigate("/");
       } else {
         alert(response.data.message);
       }
@@ -30,7 +33,6 @@ const Login = () => {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
@@ -38,7 +40,7 @@ const Login = () => {
         <h2 className="text-3xl font-bold text-center mb-6 text-[#1e293b]">
           Alumni Portal
         </h2>
-        
+
         <form className="space-y-6" onSubmit={handleLogin}>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -54,7 +56,7 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          
+
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
               Password
@@ -69,7 +71,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          
+
           <button
             type="submit"
             disabled={isLoading}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -79,6 +79,14 @@ const Login = () => {
           >
             {isLoading ? "Logging in..." : "Login"}
           </button>
+          <div className="text-center mt-4">
+            <p className="text-gray-600">
+              Don't you have an account? 
+              <a href="/signup" className="text-[#42b6b5] ml-1 hover:text-[#1e293b]">
+                SignUp
+              </a>
+            </p>
+          </div>
         </form>
       </div>
     </div>

@@ -13,7 +13,6 @@ const Navbar = () => {
     if (user) {
       setIsAuthenticated(true);
       const parsedUser = JSON.parse(user);
-      // console.log(parsedUser);
       setUserRole(parsedUser.status);
     }
   }, []);

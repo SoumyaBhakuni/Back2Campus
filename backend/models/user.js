@@ -1,6 +1,3 @@
-
-
-// models/User.js (User Model)
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 

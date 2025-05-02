@@ -12,7 +12,7 @@ const Footer = () => {
         {/* Social Media Icons */}
         <div className="flex space-x-5 mt-2">
           <a
-            href="https://twitter.com/example"
+            href="https://twitter.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -21,7 +21,7 @@ const Footer = () => {
             <FaTwitter size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/example"
+            href="https://linkedin.com/in/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -30,7 +30,7 @@ const Footer = () => {
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://github.com/example"
+            href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -39,7 +39,7 @@ const Footer = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://instagram.com/example"
+            href="https://instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -55,7 +55,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} Vizion. All Rights Reserved.
+        &copy; {new Date().getFullYear()} Back2Campus. All Rights Reserved.
       </div>
     </footer>
   );

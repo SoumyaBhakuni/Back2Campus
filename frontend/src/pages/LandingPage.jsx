@@ -22,6 +22,7 @@ import {
   Facebook,
   Github
 } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 export default function LandingPage() {
   // Feature carousel state
@@ -133,12 +134,18 @@ export default function LandingPage() {
                 <span className="text-sm">{greeting}</span>
               </div>
               <div className="flex items-center space-x-3">
-                <button className="group relative px-5 py-2.5 overflow-hidden rounded-lg bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-                  <span className="relative z-10 font-medium">Log In</span>
-                </button>
-                <button className="group relative px-5 py-2.5 overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
-                  <span className="relative z-10 font-medium">Sign Up</span>
-                </button>
+              <Link to="/login">
+  <button className="group relative px-5 py-2.5 overflow-hidden rounded-lg bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
+    <span className="relative z-10 font-medium">Log In</span>
+  </button>
+</Link>
+
+<Link to="/signup">
+  <button className="group relative px-5 py-2.5 overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">
+    <span className="relative z-10 font-medium">Sign Up</span>
+  </button>
+</Link>
+
               </div>
             </div>
             <div className="md:hidden">

@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup />} />
         <Route path="/events" element={<Events />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path='/addevents' element={<AddEvents/>}/> 
         <Route path='/CreateJobs' element={<CreateJobs/>}/>
         <Route path='/chat' element={<Chat/>}/>
-        <Route path='/landingpage' element={<LandingPage/>}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='aluminiProfile/:id'element={<AlumniProfile/>}/>
       </Routes>
     </Router>

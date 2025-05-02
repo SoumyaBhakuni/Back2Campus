@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import Feed from "../Components/Feed";
 import Trending from "../Components/Trending";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 
 const LandingPage = () => {
   return (

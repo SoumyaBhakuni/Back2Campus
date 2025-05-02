@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FaThumbsUp, FaCommentDots, FaPaperPlane, FaUser, FaCode, FaBookOpen } from "react-icons/fa";
 import Navbar from "../Components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 
 
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Briefcase, Calendar, BookOpen, Code, Building, MessageCircle, ChevronLeft } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 
 // Dummy alumni data for demonstration - should match the data in Alumni.jsx
 const alumniData = [

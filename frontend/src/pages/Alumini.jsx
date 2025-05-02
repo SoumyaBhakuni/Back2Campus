@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Afilters from "../Components/Afilters";
-import Footer from "../components/Footer"; // Fixed capitalization for consistency
+import Footer from "../Components/Footer"; // Fixed capitalization for consistency
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 

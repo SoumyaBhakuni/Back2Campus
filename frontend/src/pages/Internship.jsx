@@ -1,10 +1,10 @@
 
 import React, { useState } from "react";
-import InternshipFilters from "../components/Ifilters";
+import InternshipFilters from "../Components/Ifilters";
 import { Link } from 'react-router-dom';
 import { Calendar, MapPin, Briefcase, Clock, GraduationCap, DollarSign } from "lucide-react";
 import CreateJobs from "./CreateJobs";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 export default function Internships() {

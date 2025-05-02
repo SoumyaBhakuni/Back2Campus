@@ -12,6 +12,7 @@ import CreateJobs from './pages/CreateJobs';
 import Login from './pages/Login';
 import AlumniProfile from './pages/AluminiProfile';
 import Chat from './pages/Chat';
+import LandingPage from './pages/LandingPage';
 function App() {
   return (
     <Router>
@@ -27,6 +28,7 @@ function App() {
         <Route path='/addevents' element={<AddEvents/>}/> 
         <Route path='/CreateJobs' element={<CreateJobs/>}/>
         <Route path='/chat' element={<Chat/>}/>
+        <Route path='/landingpage' element={<LandingPage/>}/>
         <Route path='aluminiProfile/:id'element={<AlumniProfile/>}/>
       </Routes>
     </Router>

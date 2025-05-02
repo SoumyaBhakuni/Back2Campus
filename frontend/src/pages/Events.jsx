@@ -4,7 +4,7 @@ import Efilters from "../Components/Efilters";
 import { Link } from 'react-router-dom';
 import AddEvents from "./AddEvents";
 import Navbar from "../Components/Navbar";
-import Footer from "../components/Footer"; // Fixed capitalization for consistency
+import Footer from "../Components/Footer"; // Fixed capitalization for consistency
 
 import { Calendar, MapPin, User, Clock } from "lucide-react";
 

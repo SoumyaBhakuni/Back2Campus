@@ -16,7 +16,7 @@ const Login = () => {
       
       if (response.data.success) {
         // Store user data in localStorage
-        localStorage.setItem("user", JSON.stringify(response.data.user)); 
+        localStorage.setItem("user", JSON.stringify(response.data.status)); 
         
         alert("Login Successful!");
         navigate("/");  // Navigate to the homepage or a protected route
